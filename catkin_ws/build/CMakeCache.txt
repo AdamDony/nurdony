@@ -315,6 +315,18 @@ UBUNTU_JAMMY:BOOL=TRUE
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/usr/share/catkin/cmake
 
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=geometry_msgs_DIR-NOTFOUND
+
+//Value Computed by CMake
+hw2_package_BINARY_DIR:STATIC=/home/dony/nurdony/catkin_ws/build/nurdony/packages/hw2_package
+
+//Value Computed by CMake
+hw2_package_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+hw2_package_SOURCE_DIR:STATIC=/home/dony/nurdony/catkin_ws/src/nurdony/packages/hw2_package
+
 
 ########################
 # INTERNAL cache entries
@@ -427,7 +439,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

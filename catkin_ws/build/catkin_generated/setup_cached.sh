@@ -6,7 +6,7 @@
 
 # new environment variables
 export CMAKE_PREFIX_PATH='/home/dony/nurdony/catkin_ws/devel'
-export LD_LIBRARY_PATH=''
+export LD_LIBRARY_PATH='/home/dony/nurdony/catkin_ws/devel/lib'
 export PKG_CONFIG_PATH=''
 export PYTHONPATH=''
 export ROS_DISTRO='Debian'

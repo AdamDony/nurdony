@@ -1,2 +1,2 @@
-
+nurdony/packages/hw2_package
 -DCATKIN_DEVEL_PREFIX=/home/dony/nurdony/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dony/nurdony/catkin_ws/install -G Unix Makefiles
