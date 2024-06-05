@@ -1,0 +1,7 @@
+<launch>
+    <include file="/code/catkin_ws/src/nurdony/packages/turtle_square/launch/turtlesim.launch" />
+    <node pkg="turtle_square" type="turtle_square.py" name="move_turtle" output="screen" />
+    <node pkg="turtle_square" type="turtle_distance.py" name="turtle_distance_node" output="screen" />
+    <node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" />
+    <node pkg="rostopic" type="rostopic" name="echo_distance" output="screen" args="echo /turtle_distance" />
+</launch>
