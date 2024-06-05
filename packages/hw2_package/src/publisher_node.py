@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from geometry_msgs.msg import Twist
 
 def move_turtle():
     rospy.init_node('turtle_square', anonymous=True)
+    print("Hello-World")
     pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
     rate = rospy.Rate(1)  # 1 Hz
 
