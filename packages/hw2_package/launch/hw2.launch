@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find turtlesim)/launch/turtlesim.launch" />
+    <node pkg="hw2_package" type="move_turtle.py" name="move_turtle" output="screen" />
+</launch>

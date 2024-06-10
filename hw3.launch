@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find turtlesim)/launch/turtlesim.launch" />
+    <node pkg="hw2_package" type="move_turtle.py" name="move_turtle" output="screen" />
+    <node pkg="hw2_package" type="turtle_distance.py" name="turtle_distance_node" output="screen" />
+    <node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" />
+    <node pkg="rostopic" type="rostopic" name="echo_distance" output="screen" args="echo /turtle_distance" />
+</launch>
