@@ -1,0 +1,11 @@
+<launch>
+    <param name="unit" value="smoots" />
+
+    <include file="$(find hw4_package)/launch/turtlesim.launch" />
+    <node pkg="hw4_package" type="move_turtle.py" name="move_turtle" output="screen" />
+    <node pkg="hw4_package" type="turtle_distance.py" name="turtle_distance_node" output="screen" />
+    <node pkg="hw4_package" type="conversion_node.py" name="conversion_node" output="screen" />
+    <node pkg="hw4_package" type="param_setter_node.py" name="param_setter_node" output="screen" />
+
+    <node pkg="rostopic" type="rostopic" name="echo_converted_distance" output="screen" args="echo /converted_distance" />
+</launch>
