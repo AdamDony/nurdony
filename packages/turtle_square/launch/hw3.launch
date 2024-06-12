@@ -5,3 +5,4 @@
     <node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" />
     <node pkg="rostopic" type="rostopic" name="echo_distance" output="screen" args="echo /turtle_distance" />
 </launch>
+

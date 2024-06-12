@@ -18,6 +18,12 @@ def move_turtle():
             velocity_publisher.publish(vel_msg)
             rate.sleep()
 
+        # Stop
+        vel_msg.linear.x = 0.0
+        vel_msg.angular.z = 0.0
+        velocity_publisher.publish(vel_msg)
+        rate.sleep()
+
         # Turn 90 degrees
         vel_msg.linear.x = 0.0
         vel_msg.angular.z = 1.57  # 90 degrees in radians
@@ -25,8 +31,16 @@ def move_turtle():
             velocity_publisher.publish(vel_msg)
             rate.sleep()
 
+        # Stop
+        vel_msg.linear.x = 0.0
+        vel_msg.angular.z = 0.0
+        velocity_publisher.publish(vel_msg)
+        rate.sleep()
+
 if __name__ == '__main__':
     try:
         move_turtle()
     except rospy.ROSInterruptException:
         pass
+
+
