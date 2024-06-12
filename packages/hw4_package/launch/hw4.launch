@@ -9,3 +9,4 @@
 
     <node pkg="rostopic" type="rostopic" name="echo_converted_distance" output="screen" args="echo /converted_distance" />
 </launch>
+

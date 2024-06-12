@@ -1,3 +1,5 @@
+#!/bin/bash
+
 HW_PACKAGE=turtle_square
 HW_LAUNCH=hw3.launch
 
