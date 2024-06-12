@@ -1,46 +1,48 @@
 #!/usr/bin/env python3
-
 import rospy
 from geometry_msgs.msg import Twist
+import time
 
-def move_turtle():
+def move_square():
     rospy.init_node('move_turtle', anonymous=True)
-    velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+    
+    move_cmd = Twist()
+    
+    # Define the movement command
+    move_cmd.linear.x = 1.0
+    move_cmd.angular.z = 0.0
+
+    turn_cmd = Twist()
+    turn_cmd.linear.x = 0.0
+    turn_cmd.angular.z = 1.57  # 90 degrees in radians
+
     rate = rospy.Rate(1)  # 1 Hz
 
-    vel_msg = Twist()
-
     while not rospy.is_shutdown():
-        # Move forward
-        vel_msg.linear.x = 2.0
-        vel_msg.angular.z = 0.0
         for _ in range(4):
-            velocity_publisher.publish(vel_msg)
-            rate.sleep()
+            # Move forward
+            pub.publish(move_cmd)
+            time.sleep(2)
+            
+            # Stop
+            move_cmd.linear.x = 0.0
+            pub.publish(move_cmd)
+            time.sleep(1)
+            
+            # Turn
+            pub.publish(turn_cmd)
+            time.sleep(1)
+            
+            # Reset move command
+            move_cmd.linear.x = 1.0
+            pub.publish(move_cmd)
+            time.sleep(2)
 
-        # Stop
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 0.0
-        velocity_publisher.publish(vel_msg)
-        rate.sleep()
-
-        # Turn 90 degrees
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 1.57  # 90 degrees in radians
-        for _ in range(2):
-            velocity_publisher.publish(vel_msg)
-            rate.sleep()
-
-        # Stop
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 0.0
-        velocity_publisher.publish(vel_msg)
         rate.sleep()
 
 if __name__ == '__main__':
     try:
-        move_turtle()
+        move_square()
     except rospy.ROSInterruptException:
         pass
-
-
