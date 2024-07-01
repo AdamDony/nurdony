@@ -17,3 +17,4 @@ if __name__ == '__main__':
     rospy.init_node('param_setter_node', anonymous=True)
     while not rospy.is_shutdown():
         set_param()
+
