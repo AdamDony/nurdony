@@ -1,4 +1,4 @@
 <launch>
-  <node pkg="hw5_package" type="coordinate_transform_node.py" name="transform_node" output="screen"/>
+    <node pkg="hw5_package" type="transform_node.py" name="transform_points" output="screen"/>
 </launch>
 
